@@ -1,190 +1,316 @@
 <html>
- <head>
-  <title>
-   Najwa's Portfolio
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet"/>
-  <style>
-   body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color:#4a7a3c;
-            background-size: 300% 300%;
-            color: #fff;
-            scroll-behavior: smooth;
-            animation: gradient 15s ease infinite;
-        }
 
-        @keyframes gradient {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
-        .container {
+<head>
+    <title>
+        Najwa's Portfolio
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #4a7a3c;
+    background-size: 100%;
+    color: #fff;
+    scroll-behavior: smooth;
+    animation: gradient 15s ease infinite;
+}
+
+.container {
+    width: 70%;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 20px;
+    
+}
+
+.content {
+    padding-top: 150px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 20px 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #2e4d23;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-link {
+    display: flex; /* Keep links in a row by default */
+}
+
+.nav-link.active {
+    display: flex; /* Show when active */
+    flex-direction: column; /* Adjust layout if needed */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #3b5a2e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul li a:hover {
+    background-color: #4a7a3c;
+
+}
+
+#home {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    width: 20px;
+    height: 20px;
+    animation: move 10s infinite alternate ease-in-out;
+}
+
+@keyframes move {
+    0% { transform: translate(0vw, 0vh); }
+    25% { transform: translate(calc(100vw - 20px), 0vh); }
+    50% { transform: translate(calc(100vw - 20px), calc(100vh - 20px)); }
+    75% { transform: translate(0vw, calc(100vh - 20px)); }
+    100% { transform: translate(0vw, 0vh); }
+}
+
+
+.text h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.text p {
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+.image img {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 10px solid #2e4d23;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+}
+
+.container .text {
+    max-width: 500px;
+}
+
+.container .text h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container .text p {
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: rgb(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container .image {
+    position: relative;
+}
+
+.container .image img {
+    border-radius: auto;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: solid #2e4d23;
+}
+
+.portfolio-section,
+.skill-section,
+.contact-section {
+    padding: 50px 0;
+}
+
+.portfolio-section h2,
+.skill-section h2,
+.contact-section h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.portfolio-items,
+.skill-items,
+.contact-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.portfolio-item,
+.skill-item,
+.contact-item {
+    background-color: #7a9d6e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.portfolio-item img,
+.skill-item img,
+.contact-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.portfolio-item h3,
+.skill-item h3,
+.contact-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.portfolio-item p,
+.skill-item p,
+.contact-item p {
+    font-size: 14px;
+}
+
+.portfolio-item:hover,
+.skill-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.contact-items a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    #home {
+        flex-direction: column; 
+    }
+    .navbar ul { display: none; }
+        .nav-link {
+            display: none;  /* Hide links by default in mobile view */
+            flex-direction: column; /* Stack links vertically */
+            position: absolute;
+            top: 60px; /* Adjust to fit below navbar */
+            left: 0;
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
             background-color: #2e4d23;
         }
-        .navbar .logo {
+
+        .nav-link li {
+            padding: 15px;
+        }
+        
+        .nav-link.active {
+            display: flex; /* Show the links when active */
+        }
+        
+        .hamburger {
+            display: block;
+            cursor: pointer;
             font-size: 24px;
-            font-weight: 600;
-        }
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar ul li {
-            margin: 0 15px;
-        }
-        .navbar ul li a {
-            text-decoration: none;
             color: #fff;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 20px;    
-            background-color: #3b5a2e;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .navbar ul li a:hover {
-            background-color: #4a7a3c;
-        }
-        #home {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 50px;
-            animation: fadeIn 2s ease-in-out;
         }
 
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .text h1 {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .text p {
-            font-size: 16px;
-            line-height: 1.6;
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .image img {
-            border-radius: 50%;
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            border: 10px solid #2e4d23;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .image img:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-        .container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 50px;
-        }
-        .container .text {
-            max-width: 500px;
-        }
-        .container .text h1 {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .container .text p {
-            font-size: 16px;
-            line-height: 1.6;
-            background-color: rgb(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .container .image {
-            position: relative;
-        }
-        .container .image img {
-            border-radius: 50%;
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            border: 10px solid #2e4d23;
-        }
-        .portfolio-section, .skill-section, .contact-section {
-            padding: 50px 0;
-        }
-        .portfolio-section h2, .skill-section h2, .contact-section h2 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-        .portfolio-items, .skill-items, .contact-items {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .portfolio-item, .skill-item, .contact-item {
-            background-color: #7a9d6e;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            width: 200px;
-        }
-        .portfolio-item img, .skill-item img, .contact-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .portfolio-item h3, .skill-item h3, .contact-item h3 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .portfolio-item p, .skill-item p, .contact-item p {
-            font-size: 14px;
-        }
-        .portfolio-item:hover, .skill-item:hover {
-            transform: scale(1.05); /* Membesarkan sedikit */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi */
-        }
-        .footer {
-            text-align: center;
-            padding: 20px 0;
-            font-size: 14px;
-        }
-        .contact-items a {
-            display: inline-block;
-            margin: 0 10px;
-        }
-  </style>
- </head>
- <script>
+        
+}
+</style>
+<!-- <script>
     document.querySelectorAll('.navbar a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -195,245 +321,301 @@
         });
       });
     });
-  </script>
-  
- <body>
+  </script> -->
+
+<body>
+    <!-- <div class="circle" style="width: 100px; height: 100px; top: 10%; left: 20%;"></div>
+    <div class="circle" style="width: 150px; height: 150px; top: 30%; left: 50%; animation-delay: 2s;"></div>
+    <div class="circle" style="width: 80px; height: 80px; top: 60%; left: 70%; animation-delay: 4s;"></div> -->
     <div class="navbar">
-        <img alt="Logo" height="50" src="logo_w-removebg-preview.png" width="100"/>
-        <ul>
-         <li>
-          <a href="#home">
-           Home
-          </a>
-         </li>
-         <li>
-          <a href="#portfolio">
-           Portfolio
-        </a>
-    </li>
-    <li>
-        <a href="#experience">
-         Experience
-      </a>
-  </li>
-    <li>
-     <a href="#skill">
-      Skill
-     </a>
-    </li>
-    <li>
-     <a href="#contact">
-      Contact
-     </a>
-    </li>
-   </ul>
-  </div>
-  <div id="home" class="container">
-    <div class="image">
-        <img alt="Portrait of Najwa Afifah" height="300" src="wawabillie.jpg" width="300"/>
-       </div>
-       <div class="text">
-        <h1>
-         Hello, Welcome to My Portfolio!
-        </h1>
-        <p>
-         My name is Najwa Afifah. I am a student of Information Technology Education who is eager to continuously learn and develop my skills in the digital world. Here, you can explore some of the projects I have worked on, the skills I possess, and how I strive to make a positive impact through technology. Feel free to reach out to me if you are interested in collaborating or just want to have a discussion!
-        </p>
-       </div>
-      </div>    
-   <section id="portfolio" class="portfolio-section">
-    <h2>
-     Portfolio
-    </h2>
-    <div id="portfolio" class="portfolio-items">
-     <div class="portfolio-item">
-      <img alt="Mascot Artopolis 2024" height="150" src="mascot-logo.png" width="150"/>
-      <h3>
-       Mascot Artopolis 2024
-      </h3>
-      <p>
-       Mascot artropolis untuk program kerja BPM. Saya membuatnya dengan menggunakan software ibis Paint X untuk menggali kreativitas dan kesenangan.
-      </p>
-     </div>
-     <div class="portfolio-item">
-      <img alt="T-Shirt Olshop" height="300" src="tshirt-1.png" width="300"/>
-      <h3>
-       T-Shirt Olshop
-      </h3>
-      <p>
-       Beberapa desain t-shirt yang saya jual pada toko dan olshop sebagai penghasilan sampingan.
-      </p>
-     </div>
-     <div class="portfolio-item">
-      <img alt="Mascot Logo WAJAR 2024" height="200" src="mascotwajar.png" width="200"/>
-      <h3>
-       Mascot Logo WAJAR 2024
-      </h3>
-      <p>
-       Mascot logo pada program kerja Mahasiswa Mengajar dari Departemen Keilmuan dan Pengajaran Keluarga Besar Mahasiswa Departemen Sistem Informasi (KBMDSI).
-      </p>
-     </div>
-     <div class="portfolio-item">
-      <img alt="Sketsa Manual" height="200" src="sketsaku.jpg" width="200"/>
-      <h3>
-       Sketsa Manual
-      </h3>
-      <p>
-       Sketsa manual ini menggambarkan dua karakter bergaya anime yang sedang melompat dengan ekspresi ceria. Dibuat spontan karena 'gabut'.
-      </p>
-     </div>
+        <img alt="Logo" height="50" src="logo_w-removebg-preview.png" width="100" />
+        <div class="hamburger" hidden>&#9776;</div>
+        <ul class="nav-link">
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="#portfolio">
+                    Project
+                </a>
+            </li>
+            <li>
+                <a href="#experience">
+                    Experience
+                </a>
+            </li>
+            <li>
+                <a href="#skill">
+                    Skill
+                </a>
+            </li>
+            <li>
+                <a href="#contact">
+                    Contact
+                </a>
+            </li>
+        </ul>
     </div>
-   </section>
-   <section id="experience" class="portfolio-section">
-    <h2>
-     Experience
-    </h2>
-    <div id="experience" class="portfolio-items">
-     <div class="portfolio-item">
-      <img alt="Inaugurasi FILKOM" height="150" src="Main1 glow.png" width="150"/>
-      <h3>
-       Volunteer Inaugurasi FILKOM 2023
-      </h3>
-      <p>
-       Volunteer Inaugurasi FILKOM 2023 sebagai staff DDM
-      </p>
-     </div>
-     <div class="portfolio-item">
-      <img alt="KBMDSI" height="200" src="8. Logo Type 2.png" width="200"/>
-      <h3>
-       Staff Ahli Swara Shakti
-      </h3>
-      <p>
-       Staff Ahli Dapartemen Medkominfo bagian kreatif
-      </p>
-     </div>
-   </section>
-   <section  class="skill-section">
-    <h2 id="skill">
-     Skill
-    </h2>
-    <div  class="skill-items">
-     <div class="skill-item">
-      <img alt="Figma logo" height="100" src="png-transparent-figma-app-logo-tech-companies-thumbnail-removebg-preview.png" width="100"/>
-      <h3>
-       Figma
-      </h3>
-     </div>
-     <div class="skill-item">
-      <img alt="Blender logo" height="80" src="png-transparent-blender-computer-icons-rendering-blender-3d-computer-graphics-text-orange-thumbnail-removebg-preview.png" width="80"/>
-      <h3>
-       Blender
-      </h3>
-     </div>
-     <div class="skill-item">
-      <img alt="Canva logo" height="80" src="canva-logo-removebg-preview.png" width="80"/>
-      <h3>
-       Canva
-      </h3>
-     </div>
-     <div class="skill-item">
-      <img alt="Adobe Illustrator logo" height="80" src="png-transparent-adobe-ai-illustrator-logo-logos-logos-and-brands-icon-thumbnail-removebg-preview.png" width="80"/>
-      <h3>
-       Adobe Illustrator
-      </h3>
-     </div>
-     <div class="skill-item">
-      <img alt="ibis Paint X logo" height="80" src="images__2_-removebg-preview.png" width="80"/>
-      <h3>
-       ibis Paint X
-      </h3>
-     </div>
-     <div class="skill-item">
-      <img alt="Adobe Photoshop logo" height="80" src="Adobe_Photoshop_CC_icon.svg__2_-removebg-preview.png" width="80"/>
-      <h3>
-       Adobe Photoshop
-      </h3>
-     </div>
-     <div class="skill-item">
-      <img alt="Visual Studio Code logo" height="80" src="images-removebg-preview (1).png" width="80"/>
-      <h3>
-       Visual Studio Code
-      </h3>
-     </div>
+    <div class="content">
+        <div id="home" class="container">
+            <div class="image">
+                <img alt="Portrait of Najwa Afifah" height="300" src="wawabillie.jpg" width="300" />
+            </div>
+            <div class="perkenalan"> 
+                <div class="text">
+                    <h1>
+                        Hello, Welcome to My Portfolio!
+                    </h1>
+                    <p>
+                        My name is Najwa Afifah. I am a student of Information Technology Education who is eager to continuously
+                        learn and develop my skills in the digital world. Here, you can explore some of the projects I have
+                        worked on, the skills I possess, and how I strive to make a positive impact through technology. Feel
+                        free to reach out to me if you are interested in collaborating or just want to have a discussion!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <section id="portfolio" class="portfolio-section">
+            <div class="judul-porto">
+                <h2>
+                    Project
+                </h2>
+            </div>
+
+            <div class="scrollable-container"> 
+                <div id="portfolio" class="portfolio-items">
+                    <div class="portfolio-item">
+                        <img alt="Mascot Artopolis 2024" height="150" src="mascot-logo.png" width="150" />
+                        <h3>
+                            Mascot Artopolis 2024
+                        </h3>
+                        <p>
+                            Mascot artropolis untuk program kerja BPM. Saya membuatnya dengan menggunakan software ibis Paint X
+                            untuk menggali kreativitas dan kesenangan.
+                        </p>
+                    </div>
+                    <div class="portfolio-item">
+                        <img alt="T-Shirt Olshop" height="300" src="tshirt-1.png" width="300" />
+                        <h3>
+                            T-Shirt Olshop
+                        </h3>
+                        <p>
+                            Beberapa desain t-shirt yang saya jual pada toko dan olshop sebagai penghasilan sampingan.
+                        </p>
+                    </div>
+                    <div class="portfolio-item">
+                        <img alt="Mascot Logo WAJAR 2024" height="200" src="mascotwajar.png" width="200" />
+                        <h3>
+                            Mascot Logo WAJAR 2024
+                        </h3>
+                        <p>
+                            Mascot logo pada program kerja Mahasiswa Mengajar dari Departemen Keilmuan dan Pengajaran Keluarga
+                            Besar Mahasiswa Departemen Sistem Informasi (KBMDSI).
+                        </p>
+                    </div>
+                    <div class="portfolio-item">
+                        <img alt="Sketsa Manual" height="200" src="sketsaku.jpg" width="200" />
+                        <h3>
+                            Sketsa Manual
+                        </h3>
+                        <p>
+                            Sketsa manual ini menggambarkan dua karakter bergaya anime yang sedang melompat dengan ekspresi
+                            ceria. Dibuat spontan karena 'gabut'.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="experience" class="portfolio-section">
+            <h2>
+                Experience
+            </h2>
+            <div id="experience" class="portfolio-items">
+                <div class="portfolio-item">
+                    <img alt="Inaugurasi FILKOM" height="150" src="Main1 glow.png" width="150" />
+                    <h3>
+                        Volunteer Inaugurasi FILKOM 2023
+                    </h3>
+                    <p>
+                        Volunteer Inaugurasi FILKOM 2023 sebagai staff DDM
+                    </p>
+                </div>
+                <div class="portfolio-item">
+                    <img alt="SOS DSI" height="50" src="logooo sos.png" width="50" />
+                    <h3>
+                        SOS DSI 2024
+                    </h3>
+                    <p>
+                        Ketua Divisi DDM pada Synergy of Shympony 2024
+                    </p>
+                </div>
+                <div class="portfolio-item">
+                    <img alt="Artopolis" height="200" src="logo artropolis.png" width="200" />
+                    <h3>
+                        Artropolis 2024
+                    </h3>
+                    <p>
+                        Staff DDM Artropolis 2024
+                    </p>
+                </div>
+                <div class="portfolio-item">
+                    <img alt="KBMDSI" height="200" src="8. Logo Type 2.png" width="200" />
+                    <h3>
+                        Staff Ahli Swara Shakti
+                    </h3>
+                    <p>
+                        Staff Ahli Dapartemen Medkominfo bagian kreatif
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="skill-section">
+            <h2 id="skill">
+                Skill
+            </h2>
+            <div class="skill-items">
+                <div class="skill-item">
+                    <img alt="Figma logo" height="100"
+                        src="png-transparent-figma-app-logo-tech-companies-thumbnail-removebg-preview.png" width="100" />
+                    <h3>
+                        Figma
+                    </h3>
+                </div>
+                <div class="skill-item">
+                    <img alt="Blender logo" height="80"
+                        src="png-transparent-blender-computer-icons-rendering-blender-3d-computer-graphics-text-orange-thumbnail-removebg-preview.png"
+                        width="80" />
+                    <h3>
+                        Blender
+                    </h3>
+                </div>
+                <div class="skill-item">
+                    <img alt="Canva logo" height="80" src="canva-logo-removebg-preview.png" width="80" />
+                    <h3>
+                        Canva
+                    </h3>
+                </div>
+                <div class="skill-item">
+                    <img alt="Adobe Illustrator logo" height="80"
+                        src="png-transparent-adobe-ai-illustrator-logo-logos-logos-and-brands-icon-thumbnail-removebg-preview.png"
+                        width="80" />
+                    <h3>
+                        Adobe Illustrator
+                    </h3>
+                </div>
+                <div class="skill-item">
+                    <img alt="ibis Paint X logo" height="80" src="images__2_-removebg-preview.png" width="80" />
+                    <h3>
+                        ibis Paint X
+                    </h3>
+                </div>
+                <div class="skill-item">
+                    <img alt="Adobe Photoshop logo" height="80" src="Adobe_Photoshop_CC_icon.svg__2_-removebg-preview.png"
+                        width="80" />
+                    <h3>
+                        Adobe Photoshop
+                    </h3>
+                </div>
+                <div class="skill-item">
+                    <img alt="Visual Studio Code logo" height="80" src="images-removebg-preview (1).png" width="80" />
+                    <h3>
+                        Visual Studio Code
+                    </h3>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <h2>
+                Contact
+            </h2>
+            <div class="contact-items">
+                <a href="https://www.linkedin.com/in/najwa-afifah-562626286/" target="_blank">
+                    <img alt="LinkedIn logo" height="50" src="LinkedIn_logo_initials-removebg-preview.png" width="50" />
+                </a>
+                <a href="https://www.instagram.com/najwaaafifah/" target="_blank">
+                    <img alt="Instagram logo" height="50" src="Instagram_logo_2016.svg-removebg-preview.png" width="50" />
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=afifahnajwa050@gmail.com" target="_blank">
+                    <img alt="Gmail logo" height="50" src="gmail.png" width="50" />
+                </a>
+                <a href="https://line.me/ti/p/BM8rSMn_Xi" target="_blank">
+                    <img alt="LINE logo" height="50" src="LINE-removebg-preview.png" width="50" />
+                </a>
+                <a href="http://t.me/birdsochenell" target="_blank">
+                    <img alt="Telegram logo" height="50" src="Telegram_2019_Logo.svg-removebg-preview.png" width="50" />
+                </a>
+                <a href="https://shopee.co.id/najwaafifah234" target="_blank">
+                    <img alt="Shopee logo" height="50" src="Shopee-logo-removebg-preview.png" width="50" />
+                </a>
+            </div>
+        </section>
+    
+        </div>
     </div>
-   </section>
-   <section id="contact" class="contact-section">
-    <h2>
-     Contact
-    </h2>
-    <div class="contact-items">
-     <a href="https://www.linkedin.com/in/najwa-afifah-562626286/" target="_blank">
-      <img alt="LinkedIn logo" height="50" src="LinkedIn_logo_initials-removebg-preview.png" width="50"/>
-     </a>
-     <a href="https://www.instagram.com/najwaaafifah/" target="_blank">
-      <img alt="Instagram logo" height="50" src="Instagram_logo_2016.svg-removebg-preview.png" width="50"/>
-     </a>
-     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=afifahnajwa050@gmail.com" target="_blank">
-      <img alt="Gmail logo" height="50" src="gmail.png" width="50"/>
-     </a>
-     <a href="https://line.me/ti/p/BM8rSMn_Xi" target="_blank">
-      <img alt="LINE logo" height="50" src="LINE-removebg-preview.png" width="50"/>
-     </a>
-     <a href="http://t.me/birdsochenell" target="_blank">
-      <img alt="Telegram logo" height="50" src="Telegram_2019_Logo.svg-removebg-preview.png" width="50"/>
-     </a>
-     <a href="https://shopee.co.id/najwaafifah234" target="_blank">
-      <img alt="Shopee logo" height="50" src="Shopee-logo-removebg-preview.png" width="50"/>
-     </a>
-    </div>
-   </section>
-   <footer class="footer">
-    © 2024 Najwa Afifah
-   </footer>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    
+    <footer class="footer">
+        © 2024 Najwa Afifah
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        // Function to toggle the navigation menu
+        const toggleMenu = () => {
+            const navLinks = document.querySelector('.nav-link');
+            navLinks.classList.toggle('active'); // Toggle the 'active' class
+        };
+        // Attach the click event listener to the hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        hamburger.addEventListener('click', toggleMenu);
+      
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+      
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+      
         const portfolioItems = document.querySelectorAll('.portfolio-item');
         const skillItems = document.querySelectorAll('.skill-item');
-
-        // Tambahkan event listener ke setiap portfolio item
+      
+        // Add hover effects to portfolio items
         portfolioItems.forEach(item => {
             item.addEventListener('mouseenter', function() {
                 this.style.transform = 'scale(1.05)';
                 this.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
                 this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
             });
-
+      
             item.addEventListener('mouseleave', function() {
                 this.style.transform = 'scale(1)';
                 this.style.boxShadow = 'none';
             });
         });
-
-        // Tambahkan event listener ke setiap skill item
+      
+        // Add hover effects to skill items
         skillItems.forEach(item => {
             item.addEventListener('mouseenter', function() {
                 this.style.transform = 'scale(1.05)';
                 this.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
                 this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
             });
-
+      
             item.addEventListener('mouseleave', function() {
                 this.style.transform = 'scale(1)';
                 this.style.boxShadow = 'none';
             });
         });
-    });
-</script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.navbar a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute('href');
-          document.querySelector(targetId).scrollIntoView({
-            behavior: 'smooth'
-          });
-        });
       });
-    });
-  </script>
+    </script>
+      
 
- </body>
+</body>
 </html>
